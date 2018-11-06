@@ -1,0 +1,531 @@
+
+{% extends "comman.html" %}
+
+{% load static %}
+{% block body %}
+
+
+
+    <div class="hero" id="highlighted">
+      <div class="inner">
+        <!--Slideshow-->
+        <div id="highlighted-slider" class="container">
+          <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
+            <!--Slideshow content-->
+            <!--Slide 1-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 col-md-push-6 item-caption">
+                  <h2 class="h1 text-weight-light">
+                      Welcome to <span class="text-primary">techfest</span>
+                    </h2>
+                  <h4>
+                      blablabla   WRite something here  (HEADING) bla
+                  </h4>
+                  <p>bla bla bla </p>
+                  <a href="{% url "accounts:signup" %}" class="btn btn-more btn-lg i-right">Register <i class="fa fa-plus"></i></a>
+                </div>
+                <div class="col-md-6 col-md-pull-6 hidden-xs">
+                  <img src="{% static "img/slides/slide1.png" %}" alt="Slide 1" class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+            <!--Slide 2-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 text-right-md item-caption">
+                  <h2 class="h1 text-weight-light">
+                      <span class="text-primary">GNDU</span> TechFest
+                    </h2>
+                  <h4>
+                      bla bla bla bla
+                    </h4>
+                  <p>bla bla bla</p>
+                  <a href="#" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
+                </div>
+                <div class="col-md-6 hidden-xs">
+                  <img src="{% static "img/slides/slide2.png" %}" alt="Slide 2" class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!--Showcase-->
+
+    <div class="showcase block block-border-bottom-grey">
+
+      <div class="container">
+
+        <h2 class="block-title">
+            Events
+          </h2>
+        <p>bla bla bla</p>
+        <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
+          {% for event in events %}
+
+            <div class="item">
+              <a href="#" class="overlay-wrapper">
+                  <img src="{{ event.image }}" alt="{{event.name}}" class="img-responsive underlay">
+                  <span class="overlay">
+                    <span class="overlay-content"> <span class="h4">{{event.name}}</span> </span>
+                  </span>
+                </a>
+              <div class="item-details bg-noise">
+                <h4 class="item-title">
+                    <a href="#">{{event.name}}</a>
+                  </h4>
+                <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+              </div>
+            </div>
+          {% endfor %}
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event2.png" %}" alt="Event 2 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 2</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 2</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event3.png" %}" alt="Event 3 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 3</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 3</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event4.png" %}" alt="Event 4 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 4</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 4</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event5.png" %}" alt="Event 5 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 5</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 5</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event6.png" %}" alt="Event 6 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 6</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 6</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event7.png" %}" alt="Event 7 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 7</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 7</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event8.png" %}" alt="Event 8 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 8</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 8</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event9.png" %}" alt="Event 9 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 9</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 9</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event10.png" %}" alt="Event 10 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 10</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 10</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event11.png" %}" alt="Event 11 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 11</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 11</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" class="overlay-wrapper">
+                <img src="{% static "img/showcase/Event12.png" %}" alt="Event 12 image" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Event 12</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a href="#">Event 12</a>
+                </h4>
+              <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services block block-bg-gradient block-border-bottom">
+      <div class="container">
+        <h2 class="block-title">
+            Our bla bla bla
+          </h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+              bla bla bla
+              </h4>
+            <p>bla bla bla bla</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+              bla bla bla
+              </h4>
+            <p>bla bla bla</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                bla bla bla  Support
+              </h4>
+            <p>bla bla bla</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing -->
+    <div class="block-contained">
+      <h2 class="block-title">
+        Our Sponsar
+        </h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  status<em>brew</em>
+                </h4>
+            </div>
+            <div class="panel-pricing-price"># <span class="digits">a starup</span> </div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">Read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  spon<em>1</em>
+                </h4>
+            </div>
+            <div class="panel-pricing-price"> <span class="digits">bla bla</span> .</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">Read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  sponsar3
+                  <span class="panel-pricing-popular"><i class="fa fa-thumbs-up"></i> abc</span>
+                </h4>
+            </div>
+            <div class="panel-pricing-price">. <span class="digits">bla bla</span> .</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">read more</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                sponsar 4
+                </h4>
+            </div>
+            <div class="panel-pricing-price">abkc <span class="digits">xyz</span> asa.</div>
+            <div class="panel-body">
+              <ul class="list-dotted">
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+                <li>bla bla</li>
+              </ul>
+              <a href="#" class="btn btn-primary btn-sm">REad more</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+Background image callout with CSS overlay
+Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
+-->
+    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+      <h2 class="h-xlg h1 m-a-0">
+          <span data-counter-up>100,000,0</span>s
+        </h2>
+      <h3 class="h-lg m-t-0 m-b-lg">
+          number of participant registered
+        </h3>
+      <p>
+        <a href="#" class="btn btn-more btn-lg i-right">Join today! <i class="fa fa-angle-right"></i></a>
+      </p>
+    </div>
+
+  <!-- /content -->
+  <!-- Call out block -->
+  <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-md-4">
+            Some of our Sponsar
+          </h3>
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas-->
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 1">
+                  <img src="{% static "img/clients/client1.png" %}" alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 2">
+                  <img src="{% static "img/clients/client2.png" %}" alt="Client 2 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 3">
+                  <img src="{% static "img/clients/client3.png" %}" alt="Client 3 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 4">
+                  <img src="{% static "img/clients/client4.png" %}" alt="Client 4 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 5">
+                  <img src="{% static "img/clients/client5.png" %}" alt="Client 5 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="#" title="Client 6">
+                  <img src="{% static "img/clients/client6.png" %}" alt="Client 6 logo" class="img-responsive">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #footer ======== -->
+  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static "img/bg_footer-map.png" %}" data-stellar-background-ratio="0.4">
+    <div class="container">
+
+      <div class="row" id="contact">
+
+        <div class="col-md-3">
+          <address>
+              <strong>Address</strong>
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> GNDU asr
+              <br>
+              <i class="fa fa-phone fa-fw text-primary"></i> 00000000
+              <br>
+              <i class="fa fa-envelope-o fa-fw text-primary"></i> gndu@gmail.com
+              <br>
+            </address>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="text-uppercase">
+              Contact Us
+            </h4>
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-uppercase">
+              Follow Us On:
+            </h4>
+          <!--social media icons-->
+          <div class="social-media social-media-stacked">
+            <!--@todo: replace with company social media details-->
+            <!-- <a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a> -->
+            <a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+            <!-- <a href="#"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a> -->
+            <a href="#"><i class="fa fa-instagram fa-fw"></i> Instagram</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row subfooter">
+        <!--@todo: replace with company copyright details-->
+        <div class="col-md-7">
+          <p>Copyright © Brogrammer</p>
+          <div class="credits">
+
+
+          </div>
+        </div>
+        <div class="col-md-5">
+          <ul class="list-inline pull-right">
+            <li><a href="#">Terms</a></li>
+            <li><a href="{% url "privacy"  %}">Privacy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#top" class="scrolltop">Top</a>
+
+    </div>
+  </footer>
+
+
+  {% endblock  %}
