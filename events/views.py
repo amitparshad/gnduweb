@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import event
+from django.contrib.auth.models import User
 
 def eventf(request):
     events=event.objects.all()
@@ -11,3 +12,5 @@ def eventf(request):
 def p(request):
     events=event.objects.all()
     return render(request,"events/p.html",{"events":events})
+
+

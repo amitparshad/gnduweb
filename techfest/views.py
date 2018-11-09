@@ -3,6 +3,9 @@ from events.models import event
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from events.models import announcements
+from django.conf import settings
+from django.contrib.auth.models import User
 
 def home(request):
     # events=event.objects.all()
@@ -21,6 +24,8 @@ def home(request):
 
 
     return render(request,"home.html",)
+
+
 def about(request):
     return render(request,"about.html")
 def privacy(request):
@@ -29,7 +34,8 @@ def placement(request):
     return render(request,"placement.html")
 @login_required(redirect_field_name='')
 def announcement(request):
-    return render(request,"announcement.html")
+    announce = announcements.objects.all()
+    return render(request,"announcement.html",{"announce":announce})
 def log_out(request):
     logout(request)
     return redirect('home')

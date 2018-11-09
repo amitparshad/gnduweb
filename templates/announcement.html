@@ -151,61 +151,55 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="clearfix"></div>
 </nav>
 {% endif %}
+
+<br/><br/>
 <! Announcements>
 <div class="main main-raised">
     <div class="container">
       <div class="section text-center">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-              <br/>
+              <br/><br/>
             <h2 class="title">Announcements</h2>
             </div>
         </div>
 
-
+     {% for announcement in announce %}
+                  <div class="container">
                     <div class="row">
 
                          <div class="col-md-6 col-lg-4">
                             <div class="rotating-card-container">
                                 <div class="card card-rotate card-background">
-                                    <div class="front front-background" style="background-image: url('{% static 'events/images/c++.png' %}');">
+                                    <div class="front front-background" style="background-image: url('{% static 'img/gndu.png' %}');">
                                         <div class="card-body">
-                                            <h6 class="card-category">code hack</h6>
+                                            <h6 class="card-category">{{ announcement.name }}</h6>
                                             <a href="#pablo">
-                                                <h3 class="card-title"> Based on C language questions</h3>
+
+                                                <h3  class="card-title"> {{ announcement.department_name }}</h3>
                                             </a>
+
                                             <p class="card-description">
-                                                Register Now
+                                                {{ announcement.semester }} <p>semester</p>
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div class="back back-background" style="background-image: url('{% static 'events/images/c++.png' %}');">
+                                    <div class="back back-background" style="background-image: url('{% static '/img/gndu.png' %}');">
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                 Code Hack
+                                                 <h6 class="card-category">{{ announcement.name }}</h6>
+                                                 {{ announcement.department_name  }}
                                             </h5>
-                                            <p class="card-description">Read more to participate in code hack</p>
-                                            <button id="myBtn">Read More</button>
+                                            <p class="card-description">Read more to get details </p>
+                                            <button id="{{ announcement.id }}">Read More</button>
 
 <!-- The Modal -->
 
 
   <!-- Modal content -->
 
-                                            <div class="footer text-center">
 
-                                                <a href="#pablo" class="btn btn-just-icon btn-round btn-twitter">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                                <a href="#pablo" class="btn btn-just-icon btn-round btn-dribbble">
-                                                    <i class="fa fa-dribbble"></i>
-                                                </a>
-                                                <a href="#pablo" class="btn btn-just-icon btn-round btn-facebook">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-
-                                            </div>
 
                                         </div>
 
@@ -224,8 +218,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..bbb,b,nb,nm<br/>bmjhvmjbvjbjhbjh</p>
-        </div>
+            <div class="card text-center">
+  <div class="card-header badge badge-light">
+      <h4>{{ announcement.name.title }}</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title ">{{ announcement.department_name }}&nbsp {{ announcement.semester }} Semester</h5>
+    <p class="card-text badge badge-info">{{ announcement.detail.title }}</p>
+
+  </div>
+  <div class="card-footer text-muted btn btn-primary">
+   Announced By : {{ user_name }}
+  </div>
+</div>
+                  </div>
+
+    </div>
 
     </div>
 
@@ -240,7 +248,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("{{ announcement.id }}");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -262,7 +270,7 @@ window.onclick = function(event) {
     }
 }
 </script>
-
+{% endfor %}
 
 
 
