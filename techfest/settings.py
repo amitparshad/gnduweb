@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,8 @@ SECRET_KEY = 'i59cq!zqd-_5bermfhylxac&j!no=azq+czxf0&)%w*a8#1ddl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','gndutechfest.herokuapp.com']
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,3 +131,5 @@ STATICFILES_DIRS=[  os.path.join(BASE_DIR,"static" ),
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())

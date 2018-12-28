@@ -1,1 +1,1 @@
-web: gunicorn techfest.wsgi
+web: gunicorn techfest.wsgi --log-file=-
