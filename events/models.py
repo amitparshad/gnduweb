@@ -41,12 +41,14 @@ class announcements(models.Model):
     name =  models.CharField(max_length=100)
     detail=models.TextField()
     image=models.FileField(null=True,blank=True,upload_to="static/events/images")
+    image_link = models.CharField(max_length=300, null=True, blank=True)
     department_name = models.CharField(max_length=70, choices=dept_name,
         default=Dept_1)
     semester = models.CharField(max_length=10,
         choices=sem,
         default=I,)
     name_of_announcer = models.CharField(max_length=50,)
+    date_of_announcement = models.DateTimeField(auto_now = False)
     def __str__(self):
         return self.name
 

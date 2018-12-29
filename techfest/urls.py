@@ -13,5 +13,7 @@ urlpatterns = [
     path("logout",views.log_out,name="logout"),
     path("placement",views.placement,name="placement"),
     path("announcement", views.announcement, name="announcement"),
+    path("announcement2/<int:id>/", views.announce, name="announcement2"),
+
 
 ]

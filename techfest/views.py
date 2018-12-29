@@ -36,6 +36,10 @@ def placement(request):
 def announcement(request):
     announce = announcements.objects.all()
     return render(request,"announcement.html",{"announce":announce})
+def announce(request,id):
+    a=id
+    announce = announcements.objects.filter(id=a)
+    return render(request,"announcement2.html",{"announce":announce})
 def log_out(request):
     logout(request)
     return redirect('home')
