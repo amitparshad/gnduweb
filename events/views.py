@@ -13,4 +13,7 @@ def p(request):
     events=event.objects.all()
     return render(request,"events/p.html",{"events":events})
 
+def enterevent(request,number):
 
+    events = event.objects.filter(id = number)
+    return render(request,"events/enterevent.html",{ "events":events})
