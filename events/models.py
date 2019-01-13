@@ -10,6 +10,8 @@ class event(models.Model):
         return self.name
 
 
+
+
 class announcements(models.Model):
     I = 'I'
     II='II'

@@ -1,9 +1,12 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import student
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .forms import studentreg
+from .models import studentsignup
+
 
 def log_out(request):
     logout(request)
@@ -22,7 +25,6 @@ def log_in(request):
         return render(request,'accounts/login.html')
 
 
-
 def sign_up(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -37,3 +39,19 @@ def sign_up(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
+
+
+def studentform(request):
+
+    if request.method == 'POST':
+        form = studentreg(request.POST)
+        if form.is_valid():
+            form.save()
+
+            messages.success(request,'you details submiited ')
+            return HttpResponseRedirect('')
+    else:
+        form = studentreg()
+
+    return render(request,'accounts/studentform.html',{'form':form})
+
