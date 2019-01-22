@@ -21,9 +21,7 @@ def home(request):
             login(request,user)
             messages.success(request, 'Welcome to TechFest '+ u )
             return redirect("home")
-
-
-    return render(request,"home.html",)
+    return render(request,"home.html")
 
 
 def about(request):
