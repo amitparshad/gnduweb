@@ -41,3 +41,6 @@ def announce(request,id):
 def log_out(request):
     logout(request)
     return redirect('home')
+def reg(request):
+    print(request.POST)
+    return render(request,"s_detail.html")

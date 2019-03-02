@@ -1,6 +1,6 @@
-{% block static %}
+
 {% load static %}
-{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    GNDU
+   {% block title %} GNDU {% endblock %}
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="{% static 'css/material-kit.css' %}" rel="stylesheet" />
-
+{% block css %}  {% endblock %}
 </head>
 
 <body>
