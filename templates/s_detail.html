@@ -23,8 +23,15 @@ table{
 }
 table.inner{
   border: 0px
-}</style> {% endblock %}
+}</style>
+ {% endblock %}
+
+
 {% block content %}
+
+
+
+
  
 <form method="post">
 	   {% csrf_token %}
@@ -33,6 +40,13 @@ table.inner{
 
  
 <table align="center" cellpadding = "10">
+	<!----- Roll no ---------------------------------------------------------->
+<tr>
+<td>ROLL NO.</td>
+<td><input type="text" name="Roll_no" maxlength="11"/>
+(max 11 char)
+</td>
+</tr>
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
@@ -219,13 +233,13 @@ Female <input type="radio" name="Gender" value="Female" />
  
 <td>
 C
-<input type="checkbox" name="Hobby_Drawing" value="C" />
+<input type="checkbox" name="c" value="C" />
 C++
-<input type="checkbox" name="Hobby_Singing" value="C++" />
+<input type="checkbox" name="cpp" value="C++" />
 Java
-<input type="checkbox" name="Hobby_Dancing" value="Java" />
+<input type="checkbox" name="java" value="Java" />
 Python
-<input type="checkbox" name="Hobby_Cooking" value="Python" />
+<input type="checkbox" name="python" value="Python" />
 <br /><br />
 Others/Frameworks
 <!-- <input type="checkbox" name="Other_Language" value="Other"> -->

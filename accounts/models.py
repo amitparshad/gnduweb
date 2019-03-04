@@ -1,5 +1,22 @@
 from django.db import models
 from events.models import event
+
+class s_detail(models.Model):
+   roll_no = models.CharField(max_length=11,unique=True)
+   first_name=models.CharField(max_length=20)
+   last_name=models.CharField(max_length=20)  
+   dob= models.DateField()
+   email=models.EmailField()
+   mobile_number=models.CharField(max_length=10)
+   gender=models.CharField(max_length=10)
+   address=models.CharField(max_length=300)
+   city=models.CharField(max_length=10)
+   pin_code=models.CharField(max_length=7)
+   state=models.CharField(max_length=15)
+   language=models.CharField(max_length=50)
+   other_l=models.CharField(max_length=11,unique=True)
+   degree=models.CharField(max_length=10)
+
 class student(models.Model):
     event=models.ManyToManyField(event)
     username=models.CharField( max_length=30,)
@@ -35,3 +52,5 @@ class studentsignup(models.Model):
 
     class Meta():
         ordering = ['roll_no']
+
+
