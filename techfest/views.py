@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from events.models import announcements
 from django.conf import settings
 from django.contrib.auth.models import User
+from accounts.models import s_detail
 
 def home(request):
     # events=event.objects.all()
@@ -42,5 +43,15 @@ def log_out(request):
     logout(request)
     return redirect('home')
 def reg(request):
+
+    if request.method=="POST":
+        pass
+       # form=s_detail(roll_no = request.POST.get("Roll_no"),first_name =request.POST.get("First_Name",last_name=request.POST.get("Last_Name"),dob=request.POST.get("Birthday_Year")+"-"+request.POST.get("Birthday_Month")+"-"+request.POST.get("Birthday_day"), email=request.POST.get("Email_Id"), mobile_number=request.POST.get("Mobile_Number"),gender=request.POST.get("Gender"), address=request.POST.get("Address"),city=request.POST.get("City"), pin_code=request.POST.get("Pin_Code"),state=request.POST.get("State"), language=request.POST.get("c")+" "+request.POST.get("cpp")+" "+request.POST.get("java")+" "+request.POST.get("python"), other_l=request.POST.get("Other_Language") )#degree=request.POST.get("username")
+
     print(request.POST)
     return render(request,"s_detail.html")
+
+  #  print(request.POST)
+  
+    
+ 
