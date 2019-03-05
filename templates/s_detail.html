@@ -1,5 +1,6 @@
 {% extends "comman.html" %}
 {% load static %}
+
 {% block css %} <style class="cp-pen-styles">h3{
   font-family: Calibri; 
   font-size: 25pt;         
@@ -9,6 +10,14 @@
   text-align: center; 
   text-decoration: underline
 }
+<div class="page-header header-filter" filter-color="purple" style="background-image: url('{% static 'img/bg7.jpg' %}'); background-size: cover; background-position: top center;">
+  <div class="container">
+  <div class="">
+      <div class="">
+      <div class="card card-signup">
+        <h2 class="card-title text-center">Register</h2>
+        <div class="card-body">
+
 
 table{
   font-family: Calibri; 
@@ -29,14 +38,36 @@ table.inner{
 
 {% block content %}
 
+      <br/><br/>
+      {% if messages %}
+        <ul class="messages" color=#ffffff>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+          <form accept-charset="UTF-8" role="form" method="post">
+                {% csrf_token %}
 
 
-
+  <div class="page-header header-filter header-small" data-parallax="true" style="background-image: url('{% static 'img/3bg.jpg' %}');">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+                  <h1 class="title">Register</h1>
+                      <h4></br></h4>
+              </div>
+          </div>
+      </div>
+</div>
+<div class="main main-raised">
+       <div class="container">
+        
  
 <form method="post">
 	   {% csrf_token %}
 
-<h3>STUDENT REGISTRATION FORM</h3>
+<br>
+<br>
 
  
 <table align="center" cellpadding = "10">
@@ -335,4 +366,7 @@ B.A
 </table>
  
 </form>
+
+</div>
+ </div>
 {% endblock %}
