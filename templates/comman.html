@@ -21,7 +21,7 @@
 </head>
 
 <body>
-{% block nav %}
+
 <nav class="navbar bg-dark fixed-top navbar-expand-lg " color-on-scroll="100" id="sectionsNav" role="navigation-demo">
             <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,11 +48,11 @@
                       events
                     </a>
                   </li>
-                     <li class="dropdown nav-item">
+                    <!--  <li class="dropdown nav-item">
                     <a href="{% url "placement" %}" class="nav-link">
                       Placement
                     </a>
-                  </li>
+                  </li> -->
                     <li class="dropdown nav-item">
                     <a href="{% url "announcement" %}" class="nav-link">
                         Announcements
@@ -110,9 +110,14 @@
         <div class="clearfix"></div>
 </nav>
 {% endif %}
-{% endblock %}
+
+
+
 {% block content %}
+
 {% endblock %}
+
+
 
 
  <footer class="footer footer-default">
